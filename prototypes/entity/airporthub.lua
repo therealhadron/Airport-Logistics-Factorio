@@ -23,19 +23,35 @@ local airportHub = {
     inventory_size = 80,
 
     circuit_wire_max_distance = 10,
-    -- add graphics? 
+
+    picture = {
+        layers = 
+        {
+            {
+                filename = "__Airport-Logistics-Factorio__/graphics/buildings/cc.png",
+                priority = "extra-high",
+                width = 72,
+                height = 72,
+                scale = 3
+            },
+            {
+                filename = "__Airport-Logistics-Factorio__/graphics/buildings/cc.png",
+                priority = "extra-high",
+                width = 72,
+                height = 72,
+                scale = 3,
+                shift = util.by_pixel(10.5, 6),
+                draw_as_shadow = true,
+            }
+        },
+    },
 }
 
 local airportHubItem = {
     type = "item",
     name = "airport-hub",
-
-    icons = {
-        {
-            icon = "__base__/graphics/icons/cargo-landing-pad.png",
-            tint = {r=1,g=0,b=0,a=0.2},
-        }
-    },
+    icon = "__Airport-Logistics-Factorio__/graphics/buildings/cc-icon.png",
+    icon_size = 36,
     subgroup = "logistic-network",
     place_result = "airport-hub",
     stack_size = 1,
