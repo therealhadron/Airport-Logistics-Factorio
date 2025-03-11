@@ -28,14 +28,14 @@ local airportHub = {
         layers = 
         {
             {
-                filename = "__Airport-Logistics-Factorio__/graphics/buildings/cc.png",
+                filename = "__airport-logistics__/graphics/buildings/cc.png",
                 priority = "extra-high",
                 width = 72,
                 height = 72,
                 scale = 3
             },
             {
-                filename = "__Airport-Logistics-Factorio__/graphics/buildings/cc.png",
+                filename = "__airport-logistics__/graphics/buildings/cc.png",
                 priority = "extra-high",
                 width = 72,
                 height = 72,
@@ -50,7 +50,7 @@ local airportHub = {
 local airportHubItem = {
     type = "item",
     name = "airport-hub",
-    icon = "__Airport-Logistics-Factorio__/graphics/buildings/cc-icon.png",
+    icon = "__airport-logistics__/graphics/buildings/cc-icon.png",
     icon_size = 36,
     subgroup = "logistic-network",
     place_result = "airport-hub",
