@@ -8,11 +8,11 @@ data:extend({
     {
         type = "custom-input",
         name = "apl_minimap_zoom_in",
-        key_sequence = "mouse-wheel-up"
+        key_sequence = "CONTROL + mouse-wheel-up"
     },
     {
         type = "custom-input",
         name = "apl_minimap_zoom_out",
-        key_sequence = "mouse-wheel-down"
+        key_sequence = "CONTROL + mouse-wheel-down"
     }
 })
