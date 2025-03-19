@@ -120,19 +120,13 @@ local function initialize_storage(player)
     storage.players[player.index] = { elements = {}, zoom_level = 10, zoom = true }
 end
 
-script.on_init(function()
-    local freeplay = remote.interfaces["freeplay"]
-    if freeplay then  -- Disable freeplay popup-message
-        if freeplay["set_skip_intro"] then remote.call("freeplay", "set_skip_intro", true) end
-        if freeplay["set_disable_crashsite"] then remote.call("freeplay", "set_disable_crashsite", true) end
-    end
-
+function init_gui()
     storage.players = {}
 
     for _, player in pairs(game.players) do
         initialize_storage(player)
     end
-end)
+end
 
 script.on_configuration_changed(function(config_changed_data)
     if config_changed_data.mod_changes["airport-logistics"] then
