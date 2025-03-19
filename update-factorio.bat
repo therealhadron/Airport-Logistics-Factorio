@@ -1,6 +1,6 @@
 echo off
 
-SET appDataPath=%APPDATA%\Factorio\mods\Airport-Logistics-Factorio
+SET appDataPath=%APPDATA%\Factorio\mods\airport-logistics
 IF NOT EXIST "%appDataPath%" MKDIR "%appDataPath%"
 
 echo Copying files and subfolders to the Factorio mods directory...
