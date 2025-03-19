@@ -1,3 +1,4 @@
+-- Filler Data/function still testing
 local function build_airport_object(parent, caption)
     local frame = parent.add{
         type = "frame",
@@ -158,14 +159,6 @@ script.on_event(defines.events.on_gui_closed, function(event)
     end
 end)
 
-script.on_event(defines.events.on_gui_hover, function(event)
-    if event.element.name == "apl_minimap" then
-        local player_storage = storage.players[event.player_index]
-        player_storage.zoom = true
-        game.print("hovering")      
-    end
-end)
-
 script.on_event(defines.events.on_gui_leave, function(event)
     if event.element.name == "apl_minimap" then
         local player_storage = storage.players[event.player_index]
@@ -177,11 +170,9 @@ end)
 script.on_event("apl_minimap_zoom_in", function(event)
     local player_storage = storage.players[event.player_index]
     local main_frame_airport_manager = player_storage.elements.main_frame_airport_manager
-    if main_frame_airport_manager ~= nil then
-        local minimap = player_storage.elements.minimap
-        if player_storage.zoom_level < 1000 then
-            player_storage.zoom_level = player_storage.zoom_level * 1.1
-        end
+    local minimap = player_storage.elements.minimap
+    if main_frame_airport_manager ~= nil and player_storage.zoom_level < 1000 then
+        player_storage.zoom_level = player_storage.zoom_level * 1.1
         minimap.zoom = player_storage.zoom_level
     end
 end)
@@ -189,11 +180,9 @@ end)
 script.on_event("apl_minimap_zoom_out", function(event)
     local player_storage = storage.players[event.player_index]
     local main_frame_airport_manager = player_storage.elements.main_frame_airport_manager
-    if main_frame_airport_manager ~= nil then
-        local minimap = player_storage.elements.minimap
-        if player_storage.zoom_level > 1 then
-            player_storage.zoom_level = player_storage.zoom_level * 0.9
-        end
+    local minimap = player_storage.elements.minimap
+    if main_frame_airport_manager ~= nil and player_storage.zoom_level > 1 then
+        player_storage.zoom_level = player_storage.zoom_level * 0.9
         minimap.zoom = player_storage.zoom_level
     end
 end)
