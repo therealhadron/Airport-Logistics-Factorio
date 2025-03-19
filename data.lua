@@ -1,4 +1,3 @@
---data.lua
-
--- Load data files
-require("prototypes.entity.airporthub")
+require ("prototypes.entity.airporthub")
+require ("gui.styles")
+require ("gui.inputs")
