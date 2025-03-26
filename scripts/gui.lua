@@ -65,11 +65,11 @@ local function build_airport_manager_interface(player)
         type = "minimap",
         name = "apl_minimap",
         position = {0,0},
+        zoom = player_storage.zoom_level
     }
     minimap.style.horizontally_stretchable = true
     minimap.style.vertically_stretchable = true
     player_storage.elements.minimap = minimap
-    minimap.zoom = player_storage.zoom_level
 
     -- Airport list frame
     local airport_list_frame = main_frame_airport_manager.add{
@@ -118,7 +118,7 @@ local function toggle_airport_manager(player)
 end
 
 local function initialize_storage(player)
-    storage.players[player.index] = { elements = {}, zoom_level = 10, zoom = true }
+    storage.players[player.index] = { elements = {}, zoom_level = 1, zoom = true }
 end
 
 function init_gui()
